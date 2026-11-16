@@ -1,54 +1,21 @@
-# Time_series_analysis_sales_prediction
-time series analysis on sales data, fixed window, expanding window, forecasting
-# Car Price Prediction
+# Sales time-series forecasting
 
-## Project Overview
+Forecast monthly vehicle sales using exponential smoothing with a fixed window and an expanding window.
 
-This project analyses time series method on sales data and forecasts the sales 
-## Objectives
+## Data
 
-- Clean and prepare the dataset
-- Explore relationships between vehicle features and price
-- Build regression models
-- Evaluate model performance
-- Identify the most important predictors of price
-- visualisation
+`cs_11.csv` is US monthly total vehicle sales from 1976 to 2022 (thousands of units), sourced in the notebook from the U.S. Bureau of Economic Analysis series [TOTALNSA](https://fred.stlouisfed.org/series/TOTALNSA) via the Federal Reserve Bank of St. Louis (FRED). Columns are `date` and `sales`.
 
-## Tools and Technologies
+## Method
 
-- Python
-- Jupyter Notebook
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
+`Time_series_analysis.ipynb` explores the series, then builds exponential smoothing forecasts under a fixed window and an expanding window. It also explores feature selection with RFECV and an expanding window. Forecasts are evaluated with MAPE, MAE, and other absolute-error summaries.
 
-## Project Structure
+## Findings
 
-- `Time_series.ipynb`: Main analysis notebook
-- `data/`: Dataset or sample data
-- `requirements.txt`: Required Python libraries
+From the comparison table in the notebook, expanding-window exponential smoothing had a lower MAPE (7.38) and MAE (85.0) than the fixed-window model (MAPE 8.69, MAE 101.8). These figures are from the committed notebook outputs.
 
-## Methodology
+## How to run
 
-1. Data cleaning
-2. Exploratory data analysis
-3. Feature engineering
-4. Train-test split
-5. Model training
-6. Model evaluation
-7. visualisation
-
-## Model Evaluation
-
-The models are evaluated using:
-
-- RMSE
-- MAE
-- R-squared
-- actual vs. prediction graph
-
-## Author
-
-Amir Mehdi Mostofi  
-Master of Business Analytics
+```bash
+jupyter notebook Time_series_analysis.ipynb
+```
